@@ -278,6 +278,154 @@ Each model doc includes:
 > **Maintainer:** AI Platform Engineering  
 > **Last Updated:** 2025-10-08  
 > **Version:** 1.2  
+ystem Design Summary (Final Confirmation Before Generation)
 
+Your Notion import will include:
+
+1. Executive Console
+
+Global KPIs (inference latency, uptime, cost per token, etc.)
+
+Linked views of incidents, deployments, and infra usage
+
+Summary rollups from all sub-databases
+
+2. Product & Service Registry
+
+Each AI product (Chatbot, LLM, TTS, STT, RAG, Avatar, Vision, API gateway)
+
+Links: Models ↔ Pipelines ↔ Infra ↔ APIs ↔ Dashboards
+
+Columns: Owner, SLA, Current version, Dependencies, Active models, Latency budget, Cost cap
+
+3. Model Registry (Central Database)
+
+Architecture (LLM, Diffusion, TTS encoder, etc.)
+
+Parameters, model size, framework, CUDA version
+
+Training logs, datasets, checkpoints, MLflow / W&B URLs
+
+Relations to Dataset Registry, Infra nodes, and Deployments
+
+Rollups for latency, token/sec, GPU memory, accuracy, loss curves
+
+Fine-tune lineage + rollback tracking
+
+4. Dataset Registry
+
+Data sources, labeling pipeline, versioning, schema
+
+RAG chunking params, embeddings index (Weaviate/Pinecone IDs)
+
+S3 paths, retention policies, compliance tags
+
+Relations to Models (used_in), Pipelines (preprocess/training/eval)
+
+5. Pipeline Tracker
+
+DAG stages (data → preprocess → train → eval → deploy)
+
+Toolchain versions (PyTorch, CUDA, Ray, DVC)
+
+Start/end time, artifact paths, container tags
+
+Relation to Models and Infra
+
+Rollup metrics: total GPU hours, cost per run, success/failure rate
+
+6. Infra & DevOps Tracker
+
+Node inventory (GPUs, CPUs, storage, memory)
+
+Cluster tags (prod/staging/dev)
+
+Orchestration (Kubernetes namespace, pod name, scaling rules)
+
+Metrics: GPU utilization, thermals, CUDA mem usage, network throughput
+
+Monitoring URLs (Prometheus, Grafana, Loki)
+
+Relation to Deployments and Models
+
+7. API & Integration Registry
+
+REST/gRPC endpoints, auth method, load balancer target
+
+Endpoint latency, request volume, error rate
+
+Linked to Product, Model, Infra
+
+SLO/SLA compliance dashboard URLs
+
+8. Monitoring & Analytics
+
+Metrics registry (Prometheus keys, Grafana panels, W&B run URLs)
+
+Latency histograms, throughput, token/sec, GPU mem by container
+
+Cost tracking (per GPU hour / per request)
+
+Logs: Loki/Elastic indexes, alert rules
+
+9. Incident & Runbook Management
+
+Incident ID, severity, affected services, timeline
+
+Root cause, impact metrics, mitigation, follow-up tasks
+
+Linked runbooks and on-call rotation
+
+Rollups: MTTR, recurrence frequency
+
+10. Documentation & Diagrams
+
+Architecture decision records (ADRs)
+
+System diagrams (embed draw.io / Mermaid links)
+
+Service dependency graphs (export from Neo4j schema)
+
+Versioned design docs
+
+11. Dashboard Integrations
+
+Grafana panel embeds
+
+MLflow model registry / experiment tracking URLs
+
+W&B projects, Prometheus dashboards, K8s metrics
+
+Pinecone/Weaviate vector index dashboards
+
+12. Project Templates (Pre-Linked)
+
+LLM Project
+
+Models: base + fine-tune
+
+Datasets: corpus, eval, prompt logs
+
+API: /generate, /chat, /embedding
+
+Metrics: token/sec, latency, accuracy, hallucination rate
+
+TTS/STT Project
+
+Models: acoustic, vocoder
+
+Metrics: MOS, latency, audio length ratio
+
+Infra: GPU audio queue utilization
+
+Avatar Project
+
+Real-time pipeline tracking (vision + audio + animation)
+
+Frame latency, sync error, bandwidth
+
+RAG Project
+
+Chunking config, retriever latency, context hit ratio
 ---
 
