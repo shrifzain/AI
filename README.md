@@ -119,7 +119,7 @@ Each model doc includes:
 ├── rag.md
 ├── avatar.md
 └── metrics.md
-
+---
 # 🧠 AI Company System Management & Tracking Console  
 
 > **Purpose:** Centralized operations and governance console to monitor, manage, and align all AI systems — models, datasets, pipelines, infrastructure, APIs, and products — across the organization.  
