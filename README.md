@@ -106,20 +106,7 @@ Each model doc includes:
 | **Ocelot API Gateway** | Routing | External → Internal services | 🟢 Healthy | Handles path-based routing and auth |
 | **ECS Service Discovery (Cloud Map)** | DNS | Internal ECS Tasks | 🟢 Healthy | Enables service-to-service calls via DNS name |
 
----
 
-## 🧩 API Documentation Folder Structure
-
-```bash
-/docs/api/
-├── chatbot.md
-├── llm.md
-├── tts.md
-├── stt.md
-├── rag.md
-├── avatar.md
-└── metrics.md
----
 # 🧠 AI Company System Management & Tracking Console  
 
 > **Purpose:** Centralized operations and governance console to monitor, manage, and align all AI systems — models, datasets, pipelines, infrastructure, APIs, and products — across the organization.  
